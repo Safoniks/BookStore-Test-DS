@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+
+{% block content %}
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Main page</h1>
+          <p>
+            <a href="{% url 'admin:web_requests' %}" class="btn btn-primary my-2">Web requests</a>
+            <a href="{% url 'admin:book_logs' %}" class="btn btn-primary my-2">Book logs</a>
+          </p>
+        </div>
+      </section>
+    </main>
+{% endblock %}

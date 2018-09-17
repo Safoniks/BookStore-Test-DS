@@ -1,0 +1,35 @@
+<div class="{% block cls %}form-group row spacer{% endblock cls%} {% if extra_classes %}{{ extra_classes }}{% endif %}">
+    {% block content %}
+        {% block label %}
+            <div class="col-2">
+                {% if label %}
+                    <label class="col-sm-2 col-form-label">{{ label }}</label>
+                {% else %}
+                    <label class="col-sm-2 col-form-label">{{ field.label }}</label>
+                {% endif %}
+            </div>
+        {% endblock label %}
+        {% block help %}
+            {% if field.help_text %}<div class="help-text">{{ field.help_text }}</div>{% endif %}
+        {% endblock help %}
+        <div class="col-6">
+            <div class="input-group form-group">
+                {% block input %}
+                    <input class="form-control {% if field.errors %}error{% endif %}" type="text"
+                           name="{{ field.html_name|default:field.name }}"
+                           value="{{ field.value|default:field.initial|default:"" }}"
+                           {% if field.field.max_length %}maxlength="{{ field.field.max_length }}" {% endif %}
+                           {% if field.field.disabled or disabled %}disabled{% endif %}
+                           {% if field.field.required %}required{% endif %}
+                           {% if field.field.readonly %}readonly{% endif %}
+                    />
+                {% endblock input %}
+            </div>
+        </div>
+        {% block errors %}
+            <div class="error-message col-4">
+                {% if field.errors %}{{ field.errors }}{% endif %}
+            </div>
+        {% endblock errors %}
+    {% endblock content %}
+</div>

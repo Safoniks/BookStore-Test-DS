@@ -1,0 +1,13 @@
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="{% url 'admin:home' %}" class="navbar-brand d-flex align-items-center"> <strong>BackOffice</strong>
+            </a>
+            <a href="{% url 'site:home' %}" class="navbar-brand d-flex align-items-center"> <strong>Go to Site</strong>
+            </a>
+          </button>
+        </div>
+    </div>
+</header>

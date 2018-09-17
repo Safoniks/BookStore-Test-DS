@@ -1,0 +1,10 @@
+{% extends "generic/fields/base.html" %}
+
+{% block input %}
+    <input type="text" class="datetimepicker {% if field.errors %}error{% endif %}"
+            name="{{ field.html_name|default:field.name }}"
+            value="{{ field.value|default:field.initial|default:"" }}"
+            {% if field.field.disabled or disabled %}disabled{% endif %}
+            {% if field.field.required %}required{% endif %}
+            {% if field.field.readonly %}readonly{% endif %}>
+{% endblock input %}

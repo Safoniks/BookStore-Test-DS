@@ -1,0 +1,23 @@
+{
+  "name": "BookStore",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "safonik"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "components-font-awesome": "^5.0.6",
+    "datetimepicker": "^2.5.20",
+    "bootstrap": "^4.1.3"
+  }
+}

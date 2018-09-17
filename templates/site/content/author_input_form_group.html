@@ -1,0 +1,40 @@
+<div class="row form-row spacer">
+    <div class="row spacer col-12">
+        <div class="col-12">
+            <div class="input-group col-12">
+                <div class="col-4">
+                    <label>{{ form.full_name.label }}</label>
+                    <input class="form-control {% if form.full_name.errors %}error{% endif %}" type="text"
+                            name="{{ form.full_name.html_name|default:form.full_name.name }}"
+                            value="{{ form.full_name.value|default:form.full_name.initial|default:"" }}"
+                            {% if form.full_name.field.max_length %}maxlength="{{ form.full_name.field.max_length }}" {% endif %}
+                            {% if form.full_name.field.disabled or disabled %}disabled{% endif %}
+                            {% if form.full_name.field.required %}required{% endif %}
+                            {% if form.full_name.field.readonly %}readonly{% endif %}
+                    />
+                    <div class="error-message">
+                        {% if form.full_name.errors %}{{ form.full_name.errors }}{% endif %}
+                    </div>
+                </div>
+                <div class="col-5">
+                    <label>{{ form.info.label }}</label>
+                    <textarea rows="10"
+                        cols="20"
+                        name="{{ form.info.html_name|default:form.info.name }}"
+                        class="form-control {% if form.info.errors %}error{% endif %}"
+                        {% if form.info.field.disabled or disabled %}disabled{% endif %}
+                        {% if form.info.field.required %}required{% endif %}
+                        >{{ form.info.value|default:form.info.initial|default:"" }}</textarea>
+                    <div class="error-message">
+                        {% if form.info.errors %}{{ form.info.errors }}{% endif %}
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary add-form-row">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

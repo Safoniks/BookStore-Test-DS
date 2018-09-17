@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+
+{% block content %}
+    <main role="main">
+        <section class="text-center">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Book</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for log in logs %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ log.object_repr }}</td>
+                                <td>{{ log.change_message }}</td>
+                                <td>{{ log.action_time|date:'d/m/Y H:i' }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

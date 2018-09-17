@@ -1,0 +1,87 @@
+[
+  {
+    "model": "core.author",
+    "pk": 1,
+    "fields": {
+      "full_name": "Joanne Rowling",
+      "info": "As a single mother, Rowling became an international literary sensation in 1999 when the first three installments of her Harry Potter children's book series."
+    }
+  },
+  {
+    "model": "core.author",
+    "pk": 2,
+    "fields": {
+      "full_name": "Roger Fisher",
+      "info": "Roger Fisher is Samuel Williston Professor of Law, Emeritus, Harvard Law School and founder of the Harvard Negotiation Project."
+    }
+  },
+  {
+    "model": "core.author",
+    "pk": 3,
+    "fields": {
+      "full_name": "William Ury",
+      "info": "William Ury co-wrote the Getting to Yes, which has sold over 5 million copies around the world."
+    }
+  },
+  {
+    "model": "core.book",
+    "pk": 1,
+    "fields": {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "isbn": "8572490614",
+      "price": 23.5,
+      "authors": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "core.book",
+    "pk": 2,
+    "fields": {
+      "title": "Getting to Yes: Negotiating Agreement Without Giving in",
+      "isbn": "0572490610",
+      "price": 11.11,
+      "authors": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "core.book",
+    "pk": 3,
+    "fields": {
+      "title": "Harry Potter and the Order of the Phoenix",
+      "isbn": "8748900614",
+      "price": 30,
+      "authors": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "core.book",
+    "pk": 4,
+    "fields": {
+      "title": "Getting It Done: How to Lead When You're Not in Charge",
+      "isbn": "8572491234",
+      "price": 0.99,
+      "authors": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "core.book",
+    "pk": 5,
+    "fields": {
+      "title": "Cutting the Costs of Conflict: Designing Dispute Resolution Systems",
+      "isbn": "5333490614",
+      "price": 10.90,
+      "authors": [
+        3
+      ]
+    }
+  }
+]

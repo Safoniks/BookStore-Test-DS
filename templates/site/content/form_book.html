@@ -1,0 +1,31 @@
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="error-message">
+        {{ form.non_field_errors }}
+    </div>
+
+    {% include "generic/fields/text_input.html" with field=form.title %}
+    {% include "generic/fields/text_input.html" with field=form.isbn %}
+    {% include "generic/fields/number_input.html" with field=form.price %}
+    {% include "generic/fields/date_input.html" with field=form.publish_date %}
+
+    <p>Authors</p>
+    {{ formset.management_form }}
+    {% for author_form in formset %}
+        {% include "site/content/author_input_form_group.html" with form=author_form %}
+    {% endfor %}
+    <div class="error-message">
+        {{ formset.non_form_errors }}
+    </div>
+
+    <div class="row spacer">
+        <div class="col-3 offset-3">
+            <button type="submit" class="btn btn-block btn-primary">Save</button>
+        </div>
+        {% if book is not None %}
+            <div class="col-3">
+                <a href="{{ book.get_delete_url }}" class="btn btn-block btn-danger">Delete</a>
+            </div>
+        {% endif %}
+    </div>
+</form>

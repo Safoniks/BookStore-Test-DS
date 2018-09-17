@@ -1,0 +1,54 @@
+{% extends 'admin/base.html' %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+
+{% block content %}
+
+    <main role="main">
+        <section class="text-center">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">uri</th>
+                            <th scope="col">host</th>
+                            <th scope="col">path</th>
+                            <th scope="col">method</th>
+                            <th scope="col">status_code</th>
+                            <th scope="col">user_agent</th>
+                            <th scope="col">cookies</th>
+                            <th scope="col">remote_addr</th>
+                            <th scope="col">remote_addr_fwd</th>
+                            <th scope="col">get</th>
+                            <th scope="col">post</th>
+                            <th scope="col">is_secure</th>
+                            <th scope="col">is_ajax</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for web_request in web_requests %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ web_request.request.uri }}</td>
+                                <td>{{ web_request.request.host }}</td>
+                                <td>{{ web_request.request.path }}</td>
+                                <td>{{ web_request.request.method }}</td>
+                                <td>{{ web_request.request.status_code }}</td>
+                                <td>{{ web_request.request.user_agent }}</td>
+                                <td>{{ web_request.request.cookies }}</td>
+                                <td>{{ web_request.request.remote_addr }}</td>
+                                <td>{{ web_request.request.remote_addr_fwd }}</td>
+                                <td>{{ web_request.request.get }}</td>
+                                <td>{{ web_request.request.post }}</td>
+                                <td>{{ web_request.request.is_secure }}</td>
+                                <td>{{ web_request.request.is_ajax }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'site/base.html' %}
+{% load static %}{% get_static_prefix as STATIC_PREFIX %}
+
+{% block content %}
+    <main role="main" class="container">
+        {% include "site/content/form_book.html" %}
+    </main>
+{% endblock %}
